@@ -1,0 +1,258 @@
+/* variables */
+:root{
+    --dark-color: #19283f;
+    --green-color: #33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
+    --section-color: #eff7fa;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    /* for test */
+    /* delete after finish the code of the design website */
+    /* height: 10000px; */ /* delete */
+}
+/* span{
+    default font-size for anything is 16px
+    font-size: 16px; 
+    1rem = 16px
+    font-size: 1rem; 
+} */
+
+/* Start main Components */
+/* Start main-btn */
+.main-btn{
+    background-color: var(--red-color) ;
+    color: var(--yellow-color);
+    padding: 0.5rem 1rem;
+    /*  */
+    border: none;
+    border-radius: 5px; /* Initial border-radius */
+    cursor: pointer;
+    transition: all 0.2s ease; /* Add transition for smooth effect */
+}
+.main-btn:hover {
+    /* color: var(--yellow-color); */
+    background-color: rgb(4 29 63);
+    color: var(--yellow-color);
+    /*  */
+    border: 2px solid var(--yellow-color); /* Border color and width on hover */
+    border-radius: 10px; /* Updated border-radius on hover */
+}
+/* End main-btn */
+
+/* Start main-title */
+.main-title::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 120px;
+    background-color: var(--green-color);
+    /* to make the line at the center "للتوسيط" */
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* End main-title */
+/* End main Components */
+
+/* Start Navbar */
+.navbar {
+    /* to make the background-color appear => delete "navbar-light bg-light" */
+    background-color: var(--dark-color); 
+    
+}
+/* links */
+.navbar .navbar-nav .nav-link{
+    color: white;
+    transition: all 0.7s ease; /* Smooth transition for color changes */
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus{
+    color: var(--green-color);
+}
+.search{
+    border-left: 1px solid var(--green-color);
+}
+.search svg{
+    color: var(--green-color);
+}
+/* the button */
+.navbar .navbar-toggler{
+    color: white;
+    font-size: 25px;
+    border-color: white;
+}
+.navbar .navbar-toggler:focus{
+    box-shadow: none;
+}
+/* we can style by using attributes */
+/* this is not the same hover nor active */
+.navbar .navbar-toggler[aria-expanded =  "true"]{
+    border-color: var(--green-color);
+}
+/* End Navbar */
+
+/* Start Landing */
+.landing{
+    background-color: var(--dark-color);
+    min-height: calc(100vh - 72px); /* sizeOfScreen'100vh' - sizeOfNavbar'72px' (if it's sticky) */
+}
+/* End Landing */
+
+/* Start Features */
+.features .icon-holder{
+    height: 200px;
+}
+.features .icon-holder svg{
+    /* عشان نوسط الايقونات  */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.features .icon-holder .number{
+    font-size: 12rem;
+    color: var(--section-color);
+}
+.features .icon-holder .icon{
+    color: var(--green-color);
+}
+.features .feat h4{
+    color: var(--yellow-color);
+}
+/* End Features */
+
+/* Start Our Work */
+.our-work{
+    background-color: var(--section-color);
+}
+.our-work ul .active{
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+.our-work ul li{
+    padding: 0.5rem 1rem; /* the same of what at navbar*/
+    cursor: pointer;
+}
+.our-work ul li:not(.active):hover{ /*the same=> .our-work ul li:not(:first-child):hover */
+    color: var(--red-color);
+}
+.our-work .box{
+    padding: 5px;
+}
+.our-work .box::before{
+    content: attr(data-work);
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem; /* 1.5rem = 1.5 * 16 px(default font-size) = 24px*/
+    background-color: rgba(51 209 204 / 76%);
+    /* عشان الطبقة اللي من فوق تبقي عالعنصر بالظبط بخلاف او من غير الحواف البيضاء */
+    width: calc(100% - 10px); /* 100% (size of the whole box) - 10px (5px padding at the right and left)*/
+    height: calc(100% - 10px); /* 100% (size of the whole box) - 10px (5px padding at the top and bottom)*/
+    /* عشان نوسط الكلمة بالطول والعرض اللي هي => Application (which is the value of the attribute (value of custom attribute) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* to make smooth movement "حركة ناعمة" */
+    transition: 0.6s;
+    /* hide this element outside the screen */
+    /* عشان يخرج برا خالص العنصر وبرا كمان الهوامش البيضاء الموجودة عاليمين */
+    /* -100% - 5px (padding-left: 5px) */
+    transform: translateX(calc(-100% -  5px)) ;  
+}
+.our-work .box:hover:before{
+    /* make the element appear (show the element which is maken as hidden) */
+    transform: translate(0);
+}
+/* End Our Work */
+
+/* Start Stuff */
+.stuff .description{
+    max-width: 500px;
+}
+/* End Stuff */
+
+/* Start Team */
+.team{
+    background-color: var(--section-color);
+}
+.team h2{
+    color: var(--yellow-color);
+}
+.team .box h4{
+    background-color: var(--green-color);
+}
+/* End Team */
+
+/* Start Project */
+.project{
+    background-color: var(--dark-color);
+}
+/* End Project */
+
+/* Start Subscribe */
+.subscribe{
+    background-color: var(--yellow-color);
+    
+}
+.subscribe input[type = 'text']{
+    border: none;
+    border-bottom: 1px solid white;
+}
+.subscribe input[type = 'text']:focus{
+    outline: none;
+}
+.subscribe ::placeholder{
+    color: white;
+}
+.subscribe input[type = 'submit']{
+    background-color: var(--dark-color);
+    color: var(--yellow-color);
+    /*  */
+    /* border: none; */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease; /* Add transition for smooth effect */
+}
+/*  */
+.subscribe input[type = 'submit']:hover{
+    border: 2px solid var(--dark-color); /* Border color and width on hover */
+    border-radius: 10px; /* Updated border-radius on hover */
+    background-color: var(--red-color) ;
+    color: var(--yellow-color);
+}
+/* End Subscribe */
+
+/* Start Footer */
+.footer {
+    background-color: var(--dark-color);
+}
+/* direct child of the 'copy-right' class which is => "span" => (get only the first span which is the child of the class 'copy-right') (not the 2 boths spans)*/
+.footer .copy-right > span{
+    color: var(--green-color);
+}
+/* the second span at the class 'copy-right' */
+.footer .copy-right div span {
+    color: var(--yellow-color);
+}
+/* social media icons */
+.footer .contact ul svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* we can use website "brand colors" => to get the color of any thing brand like facbook,...etc as just write the brand name  */
+.footer .facebook:hover{
+    background-color: #1877f2;
+}
+.footer .twitter:hover{
+    background-color: #1da1f2;
+}
+.footer .linkedin:hover{
+    background-color: #0a66c2;
+}
+.footer .youtube:hover{
+    background-color: #ff0000;
+}
+/* End Footer */

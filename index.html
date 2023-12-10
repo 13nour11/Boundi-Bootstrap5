@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boundi</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- boundi css file -->
+    <link rel="stylesheet" href="css/boundi.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kaushan+Script&family=Lobster&family=Lobster+Two&family=Norican&family=Open+Sans:wght@400;700&family=Reem+Kufi+Fun:wght@700&family=Roboto+Slab&family=Roboto:wght@100;300;500&family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- for test and remember font-size by rem -->
+    <!-- <span>Elzero</span> -->
+
+    <!-- Start Navbar -->
+    <!-- navbar from bootstrap website -->
+    <!-- if u want to add an extra css style class go to the bootstrap website then utilities-->
+    <!-- "sticky-top" => position: sticky => class to make the navbar sticky "ثابت" during scrolling the screen -->
+    <nav class="navbar navbar-expand-lg sticky-top"> <!-- "navbar-light bg-light" => are deleted to make the backround-color appear-->
+        <div class="container"> <!-- "-fluid" => is deleted to make our container "boxed" -->
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="">
+            </a>
+
+            <!-- note that: button will appear at small screen only -->
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#main" 
+                aria-controls="main" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            >
+
+            <!-- icon from fontawesome -->
+            <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="main">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!--change "me-auto"=>margin-end=> margin-right (i know that from the bootstrap website then utilization) into "ms-auto"=>margin-start=> margin-left-->
+                <li class="nav-item">
+                    <!-- "p-2" => padding = 2 = 0.5rem from all directions -->
+                    <!-- "p-lg-3" => padding from all directions at large screen (from and up to 993) = 3 = 1rem -->
+                    <!-- "p-2 p-lg-3" => it means padding = 0.5rem at all directions but at the large screen (up to 993) the padding will be 3 = 1rem -->
+                    <a class="nav-link p-2 p-lg-3 active " aria-current="page" href="#">Home</a> 
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2 p-lg-3" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2 p-lg-3" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2 p-lg-3" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2 p-lg-3" href="#">Contact</a>
+                </li>
+                
+                
+            </ul>
+
+            <div class="search ps-3 pe-3 d-none d-lg-block">
+                <!-- {d-none d-lg-block} => display: block => at large screen (up to 992) , but '>992' => display: none -->
+                <!-- we get the icon render as an svg icon while run with js file font awesome => as making the 'i' icon comment and put svg icon instead of it -->
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <!-- login button -->
+            <!-- note that: all the classes from bootstrap website -->
+            <!-- "rounded-pill" => badge -->
+            <a class="btn main-btn rounded-pill" href="#">Login</a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Landing -->
+    <!-- "fw/normal => to reset class (css style)" -->
+    <!-- "d-flex justify-content-center align-items-center"=> are classes to make css style => display: flex; justify-content: center; align-items: center; => /* عاوز اعمل الكلام اللي جوة ف وسط الشاشة بالطول والعرض */ -->
+    <div class="landing d-flex justify-content-center align-items-center ">
+        <!-- we don't need container as the items are at the middle already -->
+        <div class="text-center text-light"> <!-- to make all text at the center -->
+            <!-- "text-light" => is a class to make the text as => (1) color: white; (2) text-align: center; -->
+            <h1>Taste the Creativity</h1>
+            <p class="fs-6 text-white-50 mb-5">We make awesome graphic and web design</p> <!-- "fs-6" => <h6> </h6>; , "mb-5"=> margin-bottom: 5rem--> 
+            <a class="btn main-btn rounded-pill" href="#">Get Started</a> 
+        </div>
+    </div>
+    <!-- End Landing -->
+
+    <!-- Start Features -->
+    <!-- we use "text-center" => as all things at the features content are at the center -->
+    <!-- to make space under and bottom => use => padding-top "pt" and padding-bottom "pb"-->
+    <div class="features text-center pt-5 pb-5"> 
+        <div class="container"> <!-- to make the content of features at the middle "يمسك المحتوي فالنص"-->
+            <!-- to make line under => use before , after and make the main-title space at top and bottom and position:relative -->
+            <div class="main-title mt-5 mp-5 position-relative">
+                <img class="mb-4" src="images/title.png" alt=""> <!--mb => a class to make space under the image-->
+                <h2>We are Good at</h2>
+                <p class="text-black-50 text-uppercase">some of these stuff under</p> 
+                <!-- text-uppercase => text-transform: uppercase; text-black-50 => color-->
+            </div>
+
+            <div class="row">
+                <!-- we have 3 elements, each one of them will take 4 rows from the grid at the large screen (as total of rows = 12 , then 12/4=3) , and 2 rows at the mediam screm, but at small screen each one of the 3 elements will take only one row alone -->
+               
+                <!-- at mediam screen: each one will take 6 out the grid (at mediam screen each one of elements will take the half)-->
+                <!-- at large screen: each one will take 4 out the grid (at large screen each one of elements will take the 1/3 "الثلث")-->
+                <!-- all elements will be besides each other as 3 at large , 2 at mediam , 1 at small and extra-small -->
+                <!-- first div -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="feat">
+                        <div class="icon-holder position-relative">
+                            <!-- position: absolute =>عشان نحط الاتنين ايقون بتوعنا تحت بعض)1) , 2)(هنوزع الايقونات دي بال -->
+                            <i class="fa-solid fa-1 position-absolute bottom-0 number"></i>
+                            <i class="fa-solid fa-pencil position-absolute bottom-0 icon fa-4x"></i> <!-- fa-4x => fontawesome css style => to make the icon bigger  -->
+                            <!-- we get the icon render as an svg icon while run with js file font awesome => as making the 'i' icon comment and put svg icon instead of it -->
+                        </div>
+                        <h4 class="text-uppercase mb-3 mt-3">graphic design</h4>
+                        <p class="text-black-50 lh-lg"> 
+                            <!-- "lh-lg" = line-height: 2 -->
+                            Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- second div -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="feat">
+                        <div class="icon-holder position-relative">
+                            <!-- position: absolute =>عشان نحط الاتنين ايقون بتوعنا تحت بعض)1) , 2)(هنوزع الايقونات دي بال -->
+                            <i class="fa-solid fa-2 position-absolute bottom-0 number"></i>
+                            <i class="fa-solid fa-tv position-absolute bottom-0 icon fa-4x"></i> <!-- fa-4x => fontawesome css style => to make the icon bigger  -->
+                            <!-- we get the icon render as an svg icon while run with js file font awesome => as making the 'i' icon comment and put svg icon instead of it -->
+                        </div>
+                        <h4 class="text-uppercase mb-3 mt-3">graphic design</h4>
+                        <p class="text-black-50 lh-lg"> 
+                            <!-- "lh-lg" = line-height: 2 -->
+                            Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- third div -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="feat">
+                        <div class="icon-holder position-relative">
+                            <!-- position: absolute =>عشان نحط الاتنين ايقون بتوعنا تحت بعض)1) , 2)(هنوزع الايقونات دي بال -->
+                            <i class="fa-solid fa-3 position-absolute bottom-0 number"></i>
+                            <i class="fa-solid fa-plug position-absolute bottom-0 icon fa-4x"></i> <!-- fa-4x => fontawesome css style => to make the icon bigger  -->
+                            <!-- we get the icon render as an svg icon while run with js file font awesome => as making the 'i' icon comment and put svg icon instead of it -->
+                        </div>
+                        <h4 class="text-uppercase mb-3 mt-3">graphic design</h4>
+                        <p class="text-black-50 lh-lg"> 
+                            <!-- "lh-lg" = line-height: 2 -->
+                            Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Features -->
+
+    <!-- Start Our Work -->
+    <div class="our-work text-center pt-5 pb-5">
+        <div class="container">
+            <div class="main-title mt-5 mp-5 position-relative">
+                <img class="mb-4" src="images/title.png" alt=""> <!--mb => a class to make space under the image-->
+                <h2>We Make This</h2>
+                <p class="text-black-50 text-uppercase">prepare to be amazed</p> 
+                <!-- text-uppercase => text-transform: uppercase; text-black-50 => color-->
+            </div>
+        </div>
+
+        <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
+            <li class="active rounded-pill">All</li>
+            <li>Design</li>
+            <li>Code</li>
+            <li>Photo</li>
+            <li>App</li>
+        </ul>
+
+        <div class="row">
+            <!-- note that: all images must be the same directions -->
+
+            <!--  we have 4 elements at the large screen , 3 at mediam , 2 at small , then 1 -->
+            <!-- 'col-sm-6' => at small screen 6 rows => means 2 elements (as 12 total of rows at the grid / 2 elements => then each one of the 2 elements will take 6 rows of the total rows of grid) -->
+            <!-- 'col-md-4' => at mediam screen 4 rows=> means 3 elements (as 12 total of rows at the grid / 3 elements => then each one of the 3 elements will take 4 rows of the total rows of grid) -->
+            <!--'col-lg-3' => at large screen 3 rows => means 4 elements (as 12 total of rows at the grid / 4 elements => then each one of the 4 elements will take 3 rows of the total rows of grid) -->
+            
+            <!-- div box 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-01.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-02.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-03.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 4 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-04.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 5 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-05.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 6 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-06.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 7 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-07.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+            <!-- div box 8 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="box mb-3 bg-white overflow-hidden position-relative" data-work="Application"> 
+                <!-- mb-3 => margin-bottom: 3rem => to make space between the top and bottom elements -->
+                <!-- bg-white => background-color: white -->
+                <!-- data-work => custom attribute -->
+                    <img src="images/work-08.jpg" alt="" class="img-fluid"> <!-- img-fluid => class to prevent the img to get out from the box-->
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- button -->
+        <div class="d-flex justify-content-center mt-5">
+            <a class="btn main-btn rounded-pill text-uppercase" href="#">I want more</a>
+        </div>
+    </div>
+    <!-- End Our Work -->
+
+    <!-- Start Stuff -->
+    <div class="stuff pt-5"> <!--pb-5 => عشان الصورة لازقة عاللي تحته -->
+        <div class="container">
+            <div class="main-title text-center mb-5 mt-5 position-relative">
+                <img class="mb-4" src="images/title.png" alt=""> <!--mb => a class to make space under the image-->
+                <h2>Some Stuff About Us</h2>
+                <p class="text-black-50 text-uppercase">the great team</p> 
+                <!-- text-uppercase => text-transform: uppercase; text-black-50 => color-->
+            </div>
+
+            <p class="description text-center mb-5 text-black-50 m-auto">
+                Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. 
+                Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
+            </p>
+
+            <div class="row align-items-center">
+                <!-- remember that we have totally rows at the grid 12 rows -->
+                <!-- we have image (right div) and texts div (left div), image will take 8 rows at large screen and left div texts will take 4 rows from the total rows at the grid -->
+                <!-- md-start => text-align: left -->
+                <!-- at all media sizes (screens) text-align: center, but at up-to 768px(media size) there is no text-align: center but there is text-align: left -->
+                <div class="col-lg-4 mb-4 text-center md-start">
+                    <div class="text">
+                        <h4>Retina Design</h4>
+                        <p class="text-black-50 fs-6">Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                        <p class="text-black-50 fs-6">Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
+                        <a class="btn main-btn rounded-pill text-uppercase" href="#">Order Me One</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="image">
+                        <img class="img-fluid" src="images/laptop.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Stuff -->
+    
+    <!-- Start Team-->
+    <div class="team text-center pt-5 pb-5">
+        <div class="container pt-5 pb-5">
+            <h2 class="fw-bold">Meet The Team</h2> <!-- fw-bold = font-wight: bold; -->
+            <p class="text-black-50 mb-5 lh-base">Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
+        </div>
+
+        <!-- we have 4 elements  -->
+        <!-- 'col-md-6' => at mediam screen 6 rows=> means 2 elements (as 12 total of rows at the grid / 2 elements => then each one of the 2 elements will take 6 rows of the total rows of grid) -->
+        <!--'col-lg-3' => at large screen 3 rows => means 4 elements (as 12 total of rows at the grid / 4 elements => then each one of the 4 elements will take 3 rows of the total rows of grid) -->
+                  
+        <div class="row">
+            <!-- box div 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="box bg-white">
+                    <img class="img-fluid" src="images/team-1.png" alt="">
+                    <h4 class="p-3 text-light">Luke Skywalker</h4>
+                    <blockquote class="text-black-50 p-3">“I don't understand how we got by those troops. I thought we were dead.“</blockquote> <!-- الحكمة -->
+                </div>
+            </div>
+
+            <!-- box div 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="box bg-white">
+                    <img class="img-fluid" src="images/team-2.png" alt="">
+                    <h4 class="p-3 text-light">Luke Skywalker</h4>
+                    <blockquote class="text-black-50 p-3">“I don't understand how we got by those troops. I thought we were dead.“</blockquote> <!-- الحكمة -->
+                </div>
+            </div>
+
+            <!-- box div 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="box bg-white">
+                    <img class="img-fluid" src="images/team-3.png" alt="">
+                    <h4 class="p-3 text-light">Luke Skywalker</h4>
+                    <blockquote class="text-black-50 p-3">“I don't understand how we got by those troops. I thought we were dead.“</blockquote> <!-- الحكمة -->
+                </div>
+            </div>
+
+            <!-- box div 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="box bg-white">
+                    <img class="img-fluid" src="images/team-4.png" alt="">
+                    <h4 class="p-3 text-light">Luke Skywalker</h4>
+                    <blockquote class="text-black-50 p-3">“I don't understand how we got by those troops. I thought we were dead.“</blockquote> <!-- الحكمة -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Team-->
+
+    <!-- Start Techs -->
+    <div class="techs pt-5 pb-5 text-center">
+        <div class="container">
+
+            <!--  we have 6 elements at the large screen , 3 at mediam , 2 at small , then 1 --> 
+            <!-- 'col-sm-6' => at small screen 6 rows => means 2 elements (as 12 total of rows at the grid / 2 elements => then each one of the 2 elements will take 6 rows of the total rows of grid) -->
+            <!-- 'col-md-4' => at mediam screen 4 rows=> means 3 elements (as 12 total of rows at the grid / 3 elements => then each one of the 3 elements will take 4 rows of the total rows of grid) -->
+            <!--'col-lg-2' => at large screen 2 rows => means 6 elements (as 12 total of rows at the grid / 6 elements => then each one of the 6 elements will take 2 rows of the total rows of grid) -->
+            <div class="row align-items-center"> <!-- align-items-center => عشان لو فيه صور مش نفس الطول يخليهم بقا كلهم ع نفس المستوي عن طريق استخدام الخاصية دي-->
+                <!-- img box div 1 -->
+                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                    <img class="img-fluid" src="images/tech-1.png" alt="">
+                </div>
+
+                <!-- img box div 2 -->
+                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                    <img class="img-fluid" src="images/tech-2.png" alt="">
+                </div>
+
+                <!-- img box div 3 -->
+                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                    <img class="img-fluid" src="images/tech-3.png" alt="">
+                </div>
+
+                <!-- img box div 4 -->
+                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                    <img class="img-fluid" src="images/tech-4.png" alt="">
+                </div>
+
+                <!-- img box div 5 -->
+                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                    <img class="img-fluid" src="images/tech-1.png" alt="">
+                </div>
+
+                <!-- img box div 6 -->
+                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                    <img class="img-fluid" src="images/tech-2.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Techs -->
+
+    <!-- Start Project -->
+    <div class="project text-center text-light pt-5 pb-5">
+        <h2>Start Your Project Now</h2>
+        <p class="text-white-50">Leave your description and we start the engine.Don't worry,you can cancel anytime</p>
+        <!-- button the same button at our-work-->
+        <div class="d-flex justify-content-center mt-5 mb-5">
+            <a class="btn main-btn rounded-pill text-uppercase" href="#">start project</a>
+        </div>
+    </div>
+    <!-- End Project -->
+
+    <!-- Start Blog -->
+    <div class="blog pt-5 pb-5">
+        <div class="container">
+            <div class="main-title text-center mb-5 mt-5 position-relative">
+                <img class="mb-4" src="images/title.png" alt=""> <!--mb => a class to make space under the image-->
+                <h2>Read Our Blog</h2>
+                <p class="text-black-50 text-uppercase">new stories</p> 
+                <!-- text-uppercase => text-transform: uppercase; text-black-50 => color-->
+            </div>
+
+
+            <!--  we have 3 elements at the large screen , 3 at mediam , 2 at small , then 1 --> 
+            <!-- 'col-md-6' => at mediam screen 6 rows=> means 2 elements (as 12 total of rows at the grid / 2 elements => then each one of the 2 elements will take 6 rows of the total rows of grid) -->
+            <!--'col-lg-4' => at large screen 4 rows => means 3 elements (as 12 total of rows at the grid / 3 elements => then each one of the 3 elements will take 4 rows of the total rows of grid) -->
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="images/blog-1.jpg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <span class="text-black-50">Dec 10 , 2023</span>
+                            <h5 class="card-title">Some Awesome Blog Title Here</h5>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="images/blog-2.jpg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <span class="text-black-50">Dec 10 , 2023</span>
+                            <h5 class="card-title">Some Awesome Blog Title Here</h5>
+                        </div>
+
+                    </div>
+                </div>
+                       
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="images/blog-3.jpg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <span class="text-black-50">Dec 10 , 2023</span>
+                            <h5 class="card-title">Some Awesome Blog Title Here</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- button the same button at our-work-->
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <a class="btn main-btn rounded-pill text-uppercase" href="#">more stories</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+
+    <!-- Start Subscribe -->
+    <!-- border-0 => border: none; -->
+    <div class="subscribe pt-5 pb-5 text-center text-md-start border-0 ">
+        <div class="container">
+            <!--  we have 3 elements at the large screen , 3 at mediam , 2 at small , then 1 --> 
+            <!-- 'col-md-6' => at mediam screen 6 rows=> means 2 elements (as 12 total of rows at the grid / 2 elements => then each one of the 2 elements will take 6 rows of the total rows of grid) -->
+            <!-- at large media => left 'text' div will take 3 rows from the total rows of grid , and the middle 'input' div will take 7 rows from the total rows of grid, and the right 'button' div will take 2 rows from the total of the rows grid  -->
+            
+            <form class="row align-items-center">
+                <!-- the left 'text' div -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="fw-bold fs-5 mb-3">Subscribe to our Newsletter:</div>
+                </div>
+
+                <!-- middle 'input' div -->
+                <div class="col-md-6 col-lg-7 mb-3"> <!-- mb-5 -->
+                    <input class="w-100 bg-transparent text-light p-2" type="text" placeholder="Enter Email Address"> <!-- w-100 => width: 100%-->
+                </div>
+
+                <!-- right 'button' div -->
+                <div class="col-md-6 col-lg-2">
+                    <input class="btn rounded-pill" type="submit" value="Subscribe">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Subscribe -->
+
+    <!-- Start Footer -->
+    <div class="footer pt-5 pb-5 text-white-50 text-center text-md-start">
+        <div class="container">
+            <!--  we have 4 elements at the large screen , 3 at mediam , 2 at small , then 1 --> 
+            <!-- 'col-md-6' =>for all at mediam screen 6 rows=> means 2 elements (as 12 total of rows at the grid / 2 elements => then each one of the 2 elements will take 6 rows of the total rows of grid) -->
+            <!--'col-lg-4' =>for last element right 'text' div and first element left 'info' div at large screen 4 rows => means 3 elements (as 12 total of rows at the grid / 3 elements => then each one of the 3 elements will take 4 rows of the total rows of grid) -->
+            <!--'col-lg-2' =>for the third element right 'links' div and the second element left 'links' div at large screen 4 rows => means 3 elements (as 12 total of rows at the grid / 3 elements => then each one of the 3 elements will take 4 rows of the total rows of grid) -->
+            
+            <div class="row">
+                <!-- first element left 'info' div -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="info mb-5">
+                        <img class="mb-4" src="images/logo.png" alt="">
+                        <p class="mb=5">Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                        <div class="copy-right">
+                            Created By <span>Graphberry</span>
+                            <div>&copf; 2023 - <span>Bondi Inc</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- second element left 'links' div -->
+                <div class="col-md-6 col-lg-2">
+                    <div class="links">
+                        <h5 class="text-light">Links</h5>
+                        <ul class="list-unstyled lh-lg">
+                            <li>Home</li>
+                            <li>Our Services</li>
+                            <li>Portfolio</li>
+                            <li>Testimonials</li>
+                            <li>Support</li>
+                            <li>Terms and Condition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- third element right 'links' -->
+                <div class="col-md-6 col-lg-2">
+                    <div class="links">
+                        <h5 class="text-light">About Us</h5>
+                        <ul class="list-unstyled lh-lg">
+                            <li>Sign In</li>
+                            <li>Register</li>
+                            <li>About Us</li>
+                            <li>Blog</li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- last element right 'text' div -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="contact">
+                        <h5 class="text-light">Contact Us</h5>
+                        <p class="lh-lg mt-3 mb-5">Get in touch with us via mail phone.We are waiting for your call or message</p>
+                        <!-- button -->
+                        <a class="btn main-btn rounded-pill w-100" href="#">graphberry@gmail.com</a>
+                        <!-- contact icons -->
+                        <!-- we can use website "brand colors" => to get the color of any thing brand like facbook,...etc as just write the brand name -->
+                        <!-- d-flex => display: flex => عشان اوزع العناصر او الايقونات دي جمب بعض -->
+                        <!-- gap-5 => gap: 5rem => to make gaps betweens the items -->
+                        <ul class="list-unstyled mt-5 d-flex gap-4 mt-5"> 
+                            <!-- facebook icon link -->
+                            <li>
+                                <a href="#" class="text-light d-block ">
+                                    <!-- rounede-circle => border-radius: 50% => to be any thing (like imge or button or icon) as circle-->
+                                    <!-- rounded-pill => the shape of the normal button -->
+                                    <!-- fa-lg => larger icon =>   font-size: 1.25em; line-height: .05em;-->
+                                    <i class="fa-brands fa-facebook fa-lg facebook rounded-circle p-2"></i>
+                                </a>
+                            </li>
+                            <!-- twitter icon link -->
+                            <li>
+                                <a class="d-block text-light" href="#">
+                                    <i class="fa-brands fa-twitter fa-lg twitter rounded-circle p-2"></i>
+                                </a>
+                            </li>
+                            
+                            <!-- linkedin icon link -->
+                            <li>
+                                <a href="#" class="text-light d-block">
+                                    <i class="fa-brands fa-linkedin-in rounded-circle p-2 linkedin fa-lg"></i>
+                                </a>
+                            </li>
+                            <!-- youtube icon link -->
+                            <li>
+                                <a href="#" class="text-light d-block">
+                                    <i class="fa-brands fa-youtube p-2 rounded-circle youtube fa-lg"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- alert example from bootstrap website => to test bootstrap -->
+    <!-- <div class="alert alert-primary" role="alert"> A simple primary alert—check it out!</div> -->
+
+    <!-- fa-5x => class to make the icon big -->
+    <!-- we get the icon render as an svg icon while run with js file font awesome => as making the 'i' icon comment and put svg icon instead of it -->
+    <!-- <i class="fa-solid fa-address-book fa-5x"></i>  -->
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script> <!-- js file of font awesome --> 
+</body>
+</html>
